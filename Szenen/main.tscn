@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ceql6hcual737"]
+
+[ext_resource type="Texture2D" uid="uid://cl4wcq4pjcare" path="res://huawei-dark-theme-3840x2160-22848.jpg" id="1_ldghw"]
+[ext_resource type="Script" uid="uid://kg3l0rxdifkp" path="res://generator.gd" id="1_ydpa8"]
+[ext_resource type="Script" uid="uid://covjcq3nuftxg" path="res://scripts/timer.gd" id="2_ekuxy"]
+
+[node name="Main" type="Node2D" unique_id=1286971366]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1143797208]
+offset_left = -86.0
+offset_top = -352.0
+offset_right = 2126.0
+offset_bottom = 1424.0
+color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=981195754]
+offset_left = -342.0
+offset_top = -59.0
+offset_right = 2330.0
+offset_bottom = 2407.0
+texture = ExtResource("1_ldghw")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Generator" type="Label" parent="." unique_id=1058619577]
+offset_left = 673.0
+offset_top = 357.0
+offset_right = 1228.0
+offset_bottom = 385.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+script = ExtResource("1_ydpa8")
+
+[node name="Button" type="Button" parent="." unique_id=1361299153]
+offset_left = 918.0
+offset_top = 1678.0
+offset_right = 1170.0
+offset_bottom = 1734.0
+text = "scramble"
+
+[node name="Exit" type="Button" parent="." unique_id=1795487095]
+offset_left = 114.0
+offset_top = 926.0
+offset_right = 366.0
+offset_bottom = 980.0
+text = "Exit"
+
+[node name="Timer" type="Label" parent="." unique_id=525567448]
+offset_left = 1424.0
+offset_top = 657.0
+offset_right = 1648.0
+offset_bottom = 823.0
+theme_override_font_sizes/font_size = 60
+script = ExtResource("2_ekuxy")
+
+[node name="TimesLabel" type="Label" parent="." unique_id=476480552]
+offset_left = 65.0
+offset_top = 83.0
+offset_right = 357.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 23
+
+[connection signal="pressed" from="Button" to="Generator" method="_on_button_pressed"]
+[connection signal="pressed" from="Exit" to="Generator" method="_on_exit_pressed"]
