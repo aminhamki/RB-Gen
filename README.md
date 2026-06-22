@@ -9,7 +9,7 @@ A minimalist Rubik's Cube scrambler and timer built with Godot.
 ## Features
 
 * Random scramble generation
-* Solve timer
+* Solve timer (space key)
 * Session time tracking
 * Minimalist interface
 
