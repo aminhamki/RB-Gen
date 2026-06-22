@@ -9,10 +9,10 @@ var words = [" R "," R' ", " L ", " L' ", " M' ", " M ", " U ", " U' ", " F ", "
 
 var scramble = false
 
-# Zeiten speichern
+
 var zeiten = []
 
-# Hier einstellen was NICHT danach kommen darf
+
 var verbote = {
 
 	# R / L / M Achse
@@ -50,7 +50,7 @@ func generiere_scramble(anzahl):
 		
 		var moeglich = words.duplicate()
 		
-		# Prüfen was zuletzt kam
+		
 		if result.size() > 0:
 			var letztes = result[-1]
 			
@@ -73,7 +73,7 @@ func _on_exit_pressed() -> void:
 
 func _input(event):
 
-	# STOP -> neuer Scramble + Zeit speichern
+	
 	if scramble and event.is_action_pressed("ui_accept"):
 		
 		text = generiere_scramble(20)
@@ -88,6 +88,6 @@ func _input(event):
 		
 		scramble = false
 
-	# START
+	
 	elif event.is_action_pressed("ui_accept"):
 		scramble = true
