@@ -6,14 +6,22 @@
 
 [node name="Main" type="Node2D" unique_id=1286971366]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1143797208]
+[node name="Control" type="Control" parent="." unique_id=1072895682]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1143797208]
+layout_mode = 0
 offset_left = -86.0
 offset_top = -352.0
 offset_right = 2126.0
 offset_bottom = 1424.0
 color = Color(0.12225223, 0.12225223, 0.12225223, 1)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=981195754]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=981195754]
+layout_mode = 0
 offset_left = -342.0
 offset_top = -59.0
 offset_right = 2330.0
@@ -22,7 +30,8 @@ texture = ExtResource("1_ldghw")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Generator" type="Label" parent="." unique_id=1058619577]
+[node name="Generator" type="Label" parent="Control" unique_id=1058619577]
+layout_mode = 0
 offset_left = 673.0
 offset_top = 357.0
 offset_right = 1228.0
@@ -31,21 +40,27 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 script = ExtResource("1_ydpa8")
 
-[node name="Button" type="Button" parent="." unique_id=1361299153]
-offset_left = 918.0
-offset_top = 1678.0
-offset_right = 1170.0
-offset_bottom = 1734.0
-text = "scramble"
+[node name="Button" type="Button" parent="Control" unique_id=1361299153]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -44.0
+offset_top = -30.0
+offset_right = 2125.0
+offset_bottom = 1257.0
+text = "
+"
 
-[node name="Exit" type="Button" parent="." unique_id=1795487095]
-offset_left = 114.0
-offset_top = 926.0
-offset_right = 366.0
-offset_bottom = 980.0
+[node name="Exit" type="Button" parent="Control" unique_id=1795487095]
+layout_mode = 0
+offset_left = -1132.0
+offset_top = 1173.0
+offset_right = -880.0
+offset_bottom = 1227.0
 text = "Exit"
 
-[node name="Timer" type="Label" parent="." unique_id=525567448]
+[node name="Timer" type="Label" parent="Control" unique_id=525567448]
+layout_mode = 0
 offset_left = 1424.0
 offset_top = 657.0
 offset_right = 1648.0
@@ -53,12 +68,13 @@ offset_bottom = 823.0
 theme_override_font_sizes/font_size = 60
 script = ExtResource("2_ekuxy")
 
-[node name="TimesLabel" type="Label" parent="." unique_id=476480552]
+[node name="TimesLabel" type="Label" parent="Control" unique_id=476480552]
+layout_mode = 0
 offset_left = 65.0
 offset_top = 83.0
 offset_right = 357.0
 offset_bottom = 115.0
 theme_override_font_sizes/font_size = 23
 
-[connection signal="pressed" from="Button" to="Generator" method="_on_button_pressed"]
-[connection signal="pressed" from="Exit" to="Generator" method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/Button" to="Control/Generator" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Exit" to="Control/Generator" method="_on_exit_pressed"]

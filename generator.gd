@@ -73,8 +73,8 @@ func _on_exit_pressed() -> void:
 
 func _input(event):
 
-	
-	if scramble and event.is_action_pressed("ui_accept"):
+	# Tastatur loslassen
+	if scramble and event.is_action_released("ui_accept"):
 		
 		text = generiere_scramble(20)
 		
@@ -88,6 +88,24 @@ func _input(event):
 		
 		scramble = false
 
-	
+	# Tastatur drücken
 	elif event.is_action_pressed("ui_accept"):
+		scramble = true
+
+
+	# TOUCH LOSLASSEN
+	if scramble and event is InputEventScreenTouch and !event.pressed:
+		
+		text = generiere_scramble(20)
+		
+		var aktuelle_zeit = timer.text
+		
+		zeiten.append(aktuelle_zeit)
+		
+		times_label.text = "\n".join(zeiten)
+		
+		scramble = false
+
+	# TOUCH DRÜCKEN
+	elif event is InputEventScreenTouch and event.pressed:
 		scramble = true
